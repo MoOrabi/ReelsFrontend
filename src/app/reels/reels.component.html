@@ -1,0 +1,24 @@
+<div>
+    <p>Post Video</p>
+  <div>
+    <form (submit)="PostReel()"> 
+      <div>
+        <label for="desc">Description</label>
+        <input type="text"  [(ngModel)] = "desc" name="desc" id="desc">
+        <label for="country" >Country</label>
+        <input type="text" [(ngModel)] = "country" name="country" id="country">
+        <label for="city">City</label>
+        <input type="text"  [(ngModel)] = "city" name="city" id="city">
+      </div>
+      <div>
+        <label for="fileupload"> Select a file to upload</label> 
+        <input type="file" accept="video/*" name="fileUpload" value="fileupload" id="fileupload" (change)="onChange($event)"> 
+        <div>
+          <input type="submit" value="submit">
+        </div>
+        
+      </div>
+   </form>
+   <p class="successMessage" name="success" ngDefaultControl #success [(ngModel)] = "successMessage" hidden>You Successfully uploaded your video</p>
+  </div>
+</div>
